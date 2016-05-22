@@ -1,0 +1,8 @@
+vdmvdm_post:
+    resource: "@VDMVDMBundle/Controller/PostController.php"
+    type:     annotation
+
+vdmvdm:
+    resource: "@VDMVDMBundle/Resources/config/routing.yml"
+    prefix:   /
+

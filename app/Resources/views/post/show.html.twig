@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>VDM's</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ post.id }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ post.contenu }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if post.date %}{{ post.date|date('d/m/Y H:i') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td>{{ post.author }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+            <a class="btn btn-default" href="{{ path('post_index') }}">Retourner à la liste</a>
+
+            <a class="btn btn-info" href="{{ path('post_edit', { 'id': post.id }) }}">Editer</a>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+{% endblock %}
